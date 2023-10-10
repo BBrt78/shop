@@ -1,0 +1,135 @@
+:root {
+    --blue:linear-gradient(rgb(255, 255, 255), rgb(155, 255, 243));
+    --grey:rgb(150, 150, 150);
+}
+
+a {
+    all: unset;
+}
+
+.container {
+    display:grid;
+    background-color:var(--grey);
+    height:100%;
+    grid-template-rows:[first] 180px [second] auto;
+}
+
+.navbar {
+    display:flex;
+    height:50px;
+    justify-content:space-between;
+}
+
+.cart, .burger {
+   margin:7px 50px;
+   color:rgb(0, 0, 0)
+}
+
+.cart:hover, .burger:hover {
+    cursor:pointer;
+    color:rgb(132, 132, 132)
+}
+
+.menu {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background-color:var(--blue);
+    height:90px;
+    margin-top:70px;
+    user-select:none;
+    animation:show 0.2s;
+}
+
+@keyframes show {
+    0% {
+        opacity:0;
+        transform: translateY(-100%);
+        
+    }
+    100% {
+        opacity:100;
+        transform: translateY(0)
+    }
+}
+
+@keyframes color {
+    0% {
+        background-color:var(--grey);
+        
+    }
+    100% {
+       background-color:var(--blue);
+    
+    }
+}
+
+.logo {
+    position:absolute;
+    left:47%;
+    font-size:30px;
+    padding: 5px;
+    user-select:none;
+}
+
+.logo:hover {
+    cursor:pointer;
+}
+
+.long-nav {
+    display:flex;
+    justify-content:space-between;
+    animation:color 0.2s;
+    background-image:var(--blue);
+    height:160px;
+}
+
+.link1{
+    margin:5px 135px 5px 5px;
+}
+
+.link2{
+    margin:5px 110px 5px 5px;
+}
+
+.link3{
+    margin:5px 155px 5px 5px;
+}
+
+.link4{
+    margin:5px 0px 5px 5px;
+}
+
+.link:hover {
+    color:rgb(98, 98, 98);
+    cursor:pointer;
+}
+
+.icon1 {
+    margin:0px 0 -3px 0;
+}
+
+.icon2 {
+    margin:0px 0 -3px 0;
+}
+
+.icon3 {
+    margin:0px 0 -3px 0;
+}
+
+.icon4 {
+    margin:0px 0 -3px 0;
+}
+
+.polecamy {
+    border: solid rgb(0, 0, 0) 1px;
+    user-select:none;
+}
+
+.contPolecamy {
+    display:grid;
+
+}
+
+.polecamyImg {
+    max-width:200px;
+}
