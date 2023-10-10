@@ -1,0 +1,24 @@
+import './App.css';
+import React from "react";
+import {Navbar} from "./navbar.js";
+import laptop from "./img/laptop1.jpg";
+import smartfon from "./img/smartfon1.jpg";
+import smartwatch from "./img/smartwatch1.jpg";
+import dysk from "./img/dysk.jpg"
+
+export function Home() {
+    return (
+        <div className="container">
+          <Navbar />
+          <div className="contPolecamy">
+            <span className="polecamy">Polecamy</span>
+            <div><img src={laptop} alt="laptop" className="polecamyImg"></img><span><br />Laptop<br />5000 zł</span></div>
+            <div><img src={smartfon} alt="smartfon" className="polecamyImg"></img><span><br />Smartfon<br />4000 zł</span></div>
+            <div><img src={smartwatch} alt="smartwatch" className="polecamyImg"></img><span><br />Smartwatch<br />2000 zł</span></div>
+            <div><img src={dysk} alt="dysk" className="polecamyImg"></img><span><br />Dysk twardy<br />300 zł</span></div>
+          </div>
+          
+        </div>
+        
+      );
+}
