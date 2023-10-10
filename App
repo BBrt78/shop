@@ -1,0 +1,30 @@
+import './App.css';
+import React from "react";
+import {Home} from "./home";
+import {Route, Routes} from "react-router-dom";
+import {Smartfony} from "./smartfony";
+import {Smartwatche} from "./smartwatche";
+import {Laptopy} from "./laptopy";
+import {Podzespoly} from "./podzespoly";
+import {Cart} from "./cart"
+
+function App() {
+  
+  return (
+    <div>
+      
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/smartfony" element={<Smartfony />} />
+          <Route path="/smartwatche" element={<Smartwatche />} />
+          <Route path="/laptopy" element={<Laptopy />} />
+          <Route path="/podzespoly" element={<Podzespoly />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes> 
+
+    </div>
+    
+  );
+}
+
+export default App;
