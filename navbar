@@ -1,0 +1,25 @@
+import './App.css';
+import React, {useState} from "react";
+import {ShoppingCart, List} from "phosphor-react";
+import {Menu} from "./menu.js";
+import {Link} from "react-router-dom";
+
+export function Navbar() {
+
+    const [menuVisible, setMenuVisible] = useState(false)
+
+    const setMenu = () => {
+        setMenuVisible(!menuVisible)
+    }
+    
+    const longNav = menuVisible ? "long-nav" : "navbar";
+
+    return (
+        <div className={`${longNav}`}>
+            <List size={32} onClick={setMenu} className="burger" />
+            {menuVisible && <Menu />}
+            <Link to="/"><span className="logo">Electron</span></Link>
+            <Link to="cart"><ShoppingCart size={36} className="cart" /></Link>
+        </div>
+    )
+}
