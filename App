@@ -7,23 +7,23 @@ import {Smartwatche} from "./smartwatche";
 import {Laptopy} from "./laptopy";
 import {Podzespoly} from "./podzespoly";
 import {Cart} from "./cart"
+import {ShopContextProvider} from "./context/shop-context.jsx"
 
 function App() {
   
   return (
-    <div>
-      
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/smartfony" element={<Smartfony />} />
-          <Route path="/smartwatche" element={<Smartwatche />} />
-          <Route path="/laptopy" element={<Laptopy />} />
-          <Route path="/podzespoly" element={<Podzespoly />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes> 
-
+    <div>  
+        <ShopContextProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/smartfony" element={<Smartfony />} />
+            <Route path="/smartwatche" element={<Smartwatche />} />
+            <Route path="/laptopy" element={<Laptopy />} />
+            <Route path="/podzespoly" element={<Podzespoly />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes> 
+        </ShopContextProvider>
     </div>
-    
   );
 }
 
