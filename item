@@ -1,0 +1,28 @@
+import './App.css';
+import React, {useContext} from "react";
+import {Navbar} from "./navbar.js";
+import {List} from "./list.js"
+import {ShopContext} from "./context/shop-context.jsx"
+
+export function Item({id, productName, productImg, productPrice, productDescription}) {
+    
+    const {addToCart, cartItems} = useContext(ShopContext)
+
+    return (
+            <div className="item">
+                <img src={require(`./img/${productImg}`)} 
+                     alt="img" 
+                     className="polecamyImg">
+                </img>
+                <span className="itemDescription"> 
+                    <span className="itemDescriptionTop">{productName}<br /> {productPrice} zł
+                    </span>
+                    <br />{productDescription}
+                </span>
+
+                <span className="dokoszyka" onClick={() => addToCart(id)}>
+                    Do koszyka
+                </span>
+            </div>
+    )
+}
