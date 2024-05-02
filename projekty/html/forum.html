@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap">
+    <style>
+        header {
+            font-family: 'Cormorant Garamond', serif;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <div>
+        <header id="header"><h1><img src="images/paw.svg" style="width:3%;height:3%">  
+        <a href="index.html" class="home"> PSY <span>i</span> KOTY</a>  
+        <img src="images/paw.svg" style="width:3%;height:3%"></h1>
+        </header>
+    </div>
+
+<div>
+    <nav>
+    <ul>
+    <li><a class="link" href="kotki.html">Zdjęcia Kotków</a></li>
+    <li><a class="link" href="pieski.html">Zdjęcia Piesków</a></li>
+    <li><a class="link" href="forum.html">Forum</a></li>
+    <li><a class="link" href="ciekawostki.html">Ciekawostki</a></li>
+    <li><a class="link" href="jak dbac.html">Jak dbać o psa i kota</a></li>
+    </ul>
+    </nav>
+</div>
+
+<div class="qwe">
+    <h2>Forum</h2>
+</div>
+
+<div>
+    <form>
+        <label for="catname">Imię twojego zwierzęcia</label><br>
+        <input type="checkbox"><input type="text" id="catname" required name="catname" placeholder="Podaj imię"><br>
+        <label for="marking">Umaszczenie</label><br>
+        <input type="checkbox"><input type="password" id="marking" required name="marking" placeholder="Podaj typ umaszczenia"><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button><br><br>
+        <label for="date">Data</label><br>
+        <input type="date" name="date" id="date"><br>
+    </form>
+
+<p>Form with radio buttons</p>
+    <form>
+        <input type="radio" id="item1" name="radio_buttons" value="item1">
+        <label for="item1">item1</label><br>
+        <input type="radio" id="item2" name="radio_buttons" value="item2">
+        <label for="item2">item2</label><br>
+        <input type="radio" id="item3" name="radio_buttons" value="item3">
+        <label for="item3">item3</label><br>
+    </form>  
+</div>
+
+<div><br>
+    <label for="eyeColor">Eye color</label><br><br>
+    <select name="eyeColor" id="eyeColor" size="3">
+        <option value="green">green</option>
+        <option label="brown">brown</option>
+        <option label="blue">blue</option>
+        <option label="turquoise">turquoise</option>
+        <option label="gold">gold</option>
+    </select>
+    </label>
+</div>
+
+<div>
+    <form action="/action_page.php">
+    <label for="someText">some text</label><br>
+    <textarea id="someText" name="someText" cols="100" rows="10">Default text</textarea><br><br>
+    <input type="reset">
+    </form>
+</div>
+
+<div>
+    <form action="/action_page.php" method="get" autocomplete="on">
+        <fieldset>
+        <legend>Dane osobowe:</legend>
+    <label for="phone">phone</label><br>
+    <input type="tel" name="phone" id="phone"><br><br>
+
+    
+        <label for="daneA">Informacja1</label><br>
+        <input type="text" id="daneA" name="daneA"size="70">
+        <br><input type="submit">
+        <input type="reset">
+    </fieldset><br>
+    <label for="vol">Volume</label>
+    <input type="range" id="vol" name="vol" min="0" max="100">
+    </form>
+    </div>
+    <div>
+        <br><br>
+        <table>
+            <caption>Zwierzęce dane</caption>
+            <tr>
+                <td>cechy:</td>
+                <th>psy</th>
+                <th>koty</th>
+                <th>słonie</th>
+                <th>tygrysy</th>
+            </tr>
+            <tr>
+                <th>słodkość</th>
+                <td rowspan="2">8/10</td>
+                <td>9/10</td>
+                <td>6/10</td>
+                <td>10/10</td>
+            </tr>
+            <tr>
+                <th>odwaga</th>
+                
+                <td>dużo</td>
+                <td>a</td>
+                <td>;)</td>
+            </tr>
+            <tr>
+                <th>humor</th>
+                <td>b</td>
+                <td colspan="3">c</td>
+                
+            </tr>
+            <tr>
+                <th>g</th>
+                <td>tak</td>
+                <td>k</td>
+                <td>j</td>
+                <td>xd</td>
+            </tr>
+        </table>
+    </div>
+    <div></div>
+
+
+
+    <br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="css.css">
+<script defer src="Script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Rock Paper Scissor with Papuez</h1>
+    <div class="new-game">New game</div>
+    <div class="answer">
+      <img src="img/papuez.jpg" class="answer-img">
+    </div>
+    
+    <div class="user-answer hide">
+      <img src="img/rock.jpg" class="hand rock-img" id="0">
+      <img src="img/paper.jpg" class="hand paper-img" id="1">
+      <img src="img/scissors.jpg" class="hand scissors-img" id="2">
+    </div>
+    
+  </div>
+
+  </body>
+</html>
+
+css
+
+
+body {
+    background-color: rgb(85, 90, 33);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    gap: 10px 50px;
+    grid-template-areas:
+    "a a"
+    "c d"
+    "c b"
+    
+}
+
+.title {
+    color: rgb(255, 238, 0);
+    grid-area: a;
+    text-align: center;
+    font-size: 40px;
+}
+
+.user-answer {
+    border: solid 2px rgb(0, 204, 255);
+    grid-area: d;
+    text-align: center;
+    padding: 40px 0 0 0;
+    top: 50%;
+}
+
+.answer {
+    grid-area: c;
+    text-align: center;
+}
+
+@keyframes papuez {
+    100% {transform: rotate(360deg);}
+}
+
+.answer-img {
+    width: 100px;
+    border-radius: 50px;
+    border: rgb(214, 67, 255) 60px dashed;
+    filter: drop-shadow(0px 0px 20px #4900a3);
+}
+
+.animation-papuez {
+    animation: papuez 1s infinite;
+}
+
+.hand {
+    width: 100px;
+    margin: 4px;
+    padding: 8px;
+}
+
+.hand:hover {
+    cursor: pointer;
+    border: red 4px solid;
+    margin: 0;
+    opacity: 0.7;
+}
+
+.new-game {
+    border: solid 2px yellow;
+    grid-area: b;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px 0 0 0;
+    background-color: yellow;
+    opacity: 0.5;
+}
+
+.new-game:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+js
+
+let userAnswer = document.querySelector(".user-answer");
+let answerImg = document.querySelector(".answer-img");
+let answer = document.querySelector(".answer")
+let newGame = document.querySelector(".new-game");
+
+let rock = document.querySelector(".rock-img");
+rock.setAttribute("id", "0");
+let paper = document.querySelector(".paper-img");
+paper.setAttribute("id", "1");
+let scissors = document.querySelector(".scissors-img");
+scissors.setAttribute("id", "2");
+
+let title = document.querySelector(".title")
+let randomNumber = Math.floor(Math.random() * 3);
+
+let rockImg = document.createElement("img");
+rockImg.src = "img/rock.jpg";
+rockImg.classList.add("hand");
+rockImg.setAttribute("id", "0")
+let paperImg = document.createElement("img");
+paperImg.src = "img/paper.jpg";
+paperImg.classList.add("hand");
+paperImg.setAttribute("id", "1")
+let scissorsImg = document.createElement("img");
+scissorsImg.src = "img/scissors.jpg";
+scissorsImg.classList.add("hand")
+scissorsImg.setAttribute("id", "2")
+
+
+let hands = [rockImg, paperImg, scissorsImg];
+
+
+newGame.addEventListener("click", () => {
+    
+    userAnswer.classList.remove("hide");
+});
+
+[rock, paper, scissors].forEach(function(element) {
+    element.addEventListener("click", e => {
+        let randomNumber = Math.floor(Math.random() * 3);   //randomNumber - id odpowiedzi papueza
+        title.innerText = "Odpowiedź Papueza:";
+        answerImg.classList.add("hide");
+        answer.appendChild(hands[randomNumber]);    //odpowiedz papueza
+        //console.log(parseInt(element.id) + randomNumber);  //id tego co kliknal user
+
+        //kamien papier nozyce
+            if (parseInt(element.id) === 0 && randomNumber === 0) {
+                title.innerText = "nie wiem"
+            } else if(parseInt(element.id) === 0 && randomNumber === 1) {
+                title.innerText = "jest możliwe"
+            } else if(parseInt(element.id) === 0 && randomNumber === 2) {
+                title.innerText = "co mam robić?"
+            } else if(parseInt(element.id) === 1 && randomNumber === 0) {
+                title.innerText = "co mam robić?"
+            } else if(parseInt(element.id) === 1 && randomNumber === 1) {
+                title.innerText = "nie wiem"
+            } else if(parseInt(element.id) === 1 && randomNumber === 2) {
+                title.innerText = "jest możliwe"
+            } else if(parseInt(element.id) === 2 && randomNumber === 0) {
+                title.innerText = "jest możliwe"
+            } else if(parseInt(element.id) === 2 && randomNumber === 1) {
+                title.innerText = "co mam robić?"
+            } else if(parseInt(element.id) === 2 && randomNumber === 2) {
+                title.innerText = "nie wiem"
+            }
+        
+
+        newGame.addEventListener("click", () => {
+            answer.removeChild(hands[randomNumber])
+            
+        });
+        
+    })
+});
+
+userAnswer.addEventListener("mouseover", () => {
+    answerImg.classList.toggle("animation-papuez")
+});
+

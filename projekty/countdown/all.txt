@@ -1,0 +1,149 @@
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="css.css">
+<script defer src="Script.js"></script>
+</head>
+<body>
+  <div class="container">
+    
+    <h2 class="h2">Countdown</h2>
+      <h4 class="giveaway">
+        giveaway ends on Sunday, 28 October 2022, 8:00
+      </h4>
+    
+      <div class="deadline">
+        
+          <div class="deadline-format">
+            <div>
+              <h4 class="days">0</h4>
+              <span>days</span>
+            </div>
+          </div>
+          
+          <div class="deadline-format">
+            <div>
+              <h4 class="hours">0</h4>
+              <span>hours</span>
+            </div>
+          </div>
+          
+          <div class="deadline-format">
+            <div>
+              <h4 class="minutes">0</h4>
+              <span>mins</span>
+            </div>
+          </div>
+        
+          <div class="deadline-format">
+            <div>
+              <h4 class="seconds">0</h4>
+              <span>secs</span>
+            </div>
+          </div>
+        
+      </div>
+
+  </div>
+  </body>
+</html>
+
+css
+
+body {
+    background-color: rgb(126, 126, 126);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.deadline {
+    display: flex;
+    flex-direction: row;
+}
+
+.deadline-format {
+    margin: 10px 30px;
+    border: dashed 1px black;
+}
+
+js
+
+function display() {
+
+let dayList = ["sunday", 
+  "monday", 
+  "tuesday", 
+  "wednesday", 
+  "thursday", 
+  "friday", 
+  "saturday"];
+let monthList = ["january", 
+  "february", 
+  "march", 
+  "april", 
+  "may", 
+  "june", 
+  "july", 
+  "august", 
+  "september", 
+  "october", 
+  "november", 
+  "december"];
+
+          //zmieniam przyszła date poniżej
+let futureDate = new Date(2022, 9, 26, 10, 30, 00);
+const giveaway = document.querySelector('.giveaway');
+const items = document.querySelectorAll('.deadline-format h4');
+
+let weekDay = dayList[futureDate.getDay()];
+let day = futureDate.getDate();
+let month = monthList[futureDate.getMonth()];
+let year = futureDate.getFullYear();
+let hour = futureDate.getHours();
+let minutes = futureDate.getMinutes();
+let seconds = futureDate.getSeconds();
+
+giveaway.textContent = `giveaway ends on ${weekDay}, ${day} ${month} ${year}, ${hour}:${minutes}:${seconds}`;
+
+
+let currentDate = new Date();
+currentDate = currentDate.getTime();
+futureDate = futureDate.getTime();
+let timeRemaining = futureDate - currentDate;
+
+let oneSec = 1000;
+let oneMin = 1000 * 60;
+let oneH = 1000 * 60 * 60;
+let oneDay = 1000 * 60 * 60 * 24;
+
+let daysLeft = Math.floor(timeRemaining / oneDay);
+let hoursLeft = Math.floor(timeRemaining%oneDay / oneH);
+let minutesLeft = Math.floor(timeRemaining%oneH / oneMin);
+let secondsLeft = Math.floor(timeRemaining%oneMin / oneSec);
+
+let data = [daysLeft, hoursLeft, minutesLeft, secondsLeft];   //=values
+
+let daysH;
+let hoursH;
+let minutesH;
+let secondsH;
+
+document.querySelector(".days").innerText = daysH;
+document.querySelector(".hours").innerText = hoursH;
+document.querySelector(".minutes").innerText = minutesH;
+document.querySelector(".seconds").innerText = secondsH;
+
+let dataH = [daysH, hoursH, minutesH, secondsH];
+
+items.forEach(function(item, index, arr) {
+  item.innerText = data[index];
+  
+})
+
+}
+
+setInterval(display, 1000)

@@ -1,0 +1,11 @@
+<div class="container">
+        <h1 class="counter">Counter</h1>
+        <div id="number" class="number">0</div>
+        <div class="buttons">
+            <button class="b btnDecrease">DECREASE</button>
+            <button class="b btnReset">RESET</button>
+            <button class="b btnIncrease">INCREASE</button>
+        </div>
+
+
+    </div>

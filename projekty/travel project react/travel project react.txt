@@ -1,0 +1,88 @@
+app
+
+import './App.css';
+import React, { useState } from 'react'
+import Card from './cardtravel'
+import travelproject from './travelproject'
+
+
+function End() {
+   return(
+      travelproject.map(card => {     
+         return( 
+               <Card
+                  title= {card.title}
+                  location= {card.location}
+                  date= {card.date}
+                  description= {card.description}
+                  img= {card.img}
+               />
+         )
+      })
+   )
+}
+
+function App() {
+   return (
+      <div>
+         <End />
+      </div>
+   )
+}
+export default App;
+------------------------------------------------------------
+
+cardtravel
+
+//szablon Card
+import React from 'react'
+import travelproject from './travelproject'
+
+
+function Card(props) {
+    return (
+        <div>
+            <p>title= {props.title}</p>
+            <p>location= {props.location}</p>
+            <p>date= {props.date}</p>
+            <p>description= {props.description}</p>
+            <img src= {props.img} />
+        </div>
+    )
+}
+export default Card
+-------------------------------------------------------------
+
+travelproject
+
+import React from 'react'
+import dog from './img/dog.jpg'
+import bird from './img/bird.jpg'
+import cat from './img/cat.jpg'
+
+export default [
+    {
+        key: 1,
+        title: 'title1',
+        location: 'location1',
+        date: 'date1',
+        description: 'description1',
+        img: dog
+    },
+    {
+        key: 1,
+        title: '2',
+        location: '2',
+        date: '2',
+        description: '2',
+        img: cat
+    },
+    {
+        key: 1,
+        title: '3',
+        location: '3',
+        date: '3',
+        description: '3',
+        img: bird
+    }
+]

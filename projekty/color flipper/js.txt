@@ -1,0 +1,60 @@
+document.querySelector(".href1").style.color = "red";
+// 1 of 3
+let btn = document.querySelector(".btn");
+let colors = ["#ff3300", "#3333ff", "#33cc33"];
+let randomNum;
+
+
+function random() {
+    return Math.floor(Math.random() * 3);
+};
+
+btn.addEventListener("click", function() {
+    const randomNumber = random();
+    document.body.style.backgroundColor = colors[randomNumber];
+    document.querySelector(".color-name").innerText = colors[randomNumber];
+});
+
+// Random
+
+let btnRandom = document.querySelector(".btn-random");
+let hex = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "f"];
+
+function randomHexNum() {
+    return Math.floor(Math.random() * 14);
+};
+
+let hexN = "#";
+
+btn.addEventListener("click", function() {
+    for (let i = 0; i++; i < 6) {
+        hexN =+ hex[randomHexNum()]
+        
+    };
+   return hexN;
+});
+console.log(hexN)
+
+
+// Random
+document.querySelector(".href2").style.color = "red";
+let btn = document.querySelector(".btn");
+let hex = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "f"];
+const colorName = document.querySelector(".color-name");
+let hexN;
+
+btn.addEventListener("click", function() {
+    hexN = "#";
+    for (let i = 0; i < 6; i++) {
+        hexN += hex[randomHexNum()]
+        
+    };
+   colorName.textContent = hexN;
+   document.body.style.backgroundColor = hexN;
+});
+
+function randomHexNum() {
+    return Math.floor(Math.random() * 14);
+};
+
+console.log(hexN)

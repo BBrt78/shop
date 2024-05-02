@@ -1,0 +1,166 @@
+:root {
+  --pink: rgb(255, 80, 167);
+  --purple: rgb(106, 1, 171)
+}
+
+body {
+  background: rgb(209, 209, 209);
+}
+
+.img {
+  max-width: 200px;
+  border-radius: 10px;
+}
+
+.profile {
+  display: grid;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  border: solid 2px var(--pink);
+  box-shadow: 1px 1px 4px rgb(106, 1, 171)
+}
+
+.data {
+  display: grid;
+  justify-items: center;
+}
+
+.name, .age {
+  color: var(--purple);
+  font-size: 25px;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--purple);
+  color: white;
+}
+
+.notBtn, .hotBtn {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.hotBtn:hover {
+  border: rgb(17, 255, 0) 2px solid;
+}
+
+.notBtn:hover {
+  border: red 2px solid;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "tinderTitle"
+    "profile";
+  row-gap: 40px;
+  justify-items: center;
+}
+
+.tinderTitle {
+  font-size: 60px;
+  font-weight: 700;
+  color: var(--pink);
+  font-style: italic;
+  text-shadow: 1px 3px 2px rgb(106, 1, 171);
+  letter-spacing: 8px;
+  margin: 10px;
+}
+
+.chosenTitle {
+  font-weight: 600;
+  font-size: 30px;
+  color: var(--purple);
+}
+
+.chosenProfile {
+  background-color: white;
+}
+
+.chosen {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 40px;
+  margin-top: 40px
+}
+
+
+app
+
+
+import './App.css';
+import {useState, useRef, useEffect, useReducer} from 'react';
+import {List} from './tinderList';
+import {Profile} from './profile';
+import cat from './img/cat.jpg';
+import dog from './img/dog.jpg';
+import bird from './img/bird.jpg';
+
+const id = List.map((id) => {return List.id});
+const name = List.map((name) => {return List.name});
+const age = List.map((age) => {return List.age});
+const img = List.map((img) => {return List.img});
+
+
+function App() {
+	const [n, setN] = useState(0);
+	const [yesList, setYesList] = useState([])
+
+	function next(event) {
+		if (event.target.name === "hot") {
+			setYesList([...yesList, List[n]])
+		}
+		setN(n + 1)
+		console.log(yesList)
+	   }
+
+	return (
+		<div className="container">
+			<p className="tinderTitle">Petinder</p>
+
+			{n <= 2 ? (
+				<div className="item profile">
+					<Profile
+						name = {List[n].name}
+						age = {List[n].age} 
+						img = {List[n].img}
+						/>
+					<div className="btns">
+						<button className="btn notBtn" onClick={next} name="not">Not!</button>
+						<button className="btn hotBtn" onClick={next} name="hot">Hot!</button>
+					</div>
+				</div>
+			)
+			: 
+			(
+				<div>
+				<span className="chosenTitle">Twoje wybory:</span>
+					<br /><br />
+				<div className="chosen">
+					{yesList.map((profile) => {
+						return (
+							<div key={profile.key} className="item profile">
+								<img className="sub-item img" src={profile.img} alt="img" /> <br />
+								<div className="sub-item name">{profile.name}</div>
+								<div className="sub-item age">{profile.age}</div><br />
+							</div>
+						)})}
+				</div>
+				</div>
+				)}
+		</div>
+	)
+}
+export default App;

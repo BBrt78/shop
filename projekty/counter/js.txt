@@ -1,0 +1,33 @@
+let decrease = document.querySelector(".btnDecrease");
+let reset = document.querySelector(".btnReset");
+let increase = document.querySelector(".btnIncrease");
+
+let incr = function inc() {
+    document.querySelector(".number").textContent++;
+    if (document.querySelector(".number").textContent > 0) {
+        document.getElementById("number").classList.add("green")
+        document.getElementById("number").classList.remove("red")
+    }
+    
+};
+
+increase.addEventListener("click", incr);
+
+let decr = function dec() {
+    document.querySelector(".number").textContent--;
+    if (document.querySelector(".number").textContent < 0) {
+        document.getElementById("number").classList.add("red");
+        document.getElementById("number").classList.remove("green")
+
+    }
+    }
+    
+decrease.addEventListener("click", decr);
+
+let res = function re() {
+    document.querySelector(".number").textContent = 0;
+    document.getElementById("number").classList.remove("green")
+    document.getElementById("number").classList.remove("red")
+}
+
+reset.addEventListener("click", res)

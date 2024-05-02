@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="css.css">
+<script defer src="Script.js"></script>
+</head>
+<body>
+  <header id="home">
+    <nav class="nav">
+      <div class="nav-center">
+        <button class="nav-toggle">Menu</button>
+      </div>
+
+      <div id="links-c" class="links-container display-none links-column">
+        
+            <a href="#home" class="scroll-link">home</a>
+          
+            <a href="#about" class="scroll-link">about</a>
+          
+            <a href="#services" class="scroll-link">services</a>
+          
+      </div>
+    </nav>
+      <div class="container">
+        Scroll project
+      </div>
+  </header>
+
+    <section id="about" class="section">
+      <div class="title">
+        About section.
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="title">
+        Services section.
+      </div>
+    </section>
+    
+    <footer class="section">
+      <p>Current year: <span id="date"></span>
+      </p>
+    </footer>
+    <a href="#home" class="scroll-link top-link">UP</a>
+  </body>
+</html>
+
+----------css----------
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  background-image: linear-gradient(rgb(0, 84, 0), rgb(155, 155, 0), rgb(0, 0, 0));
+  min-height: 700px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about {
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(255, 204, 0), rgb(0, 0, 0));
+  min-height: 700px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#services {
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(253, 240, 0), white);
+  min-height: 700px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-link {
+  display: flex;
+  justify-content: right;
+  padding: 20px;
+  font-size: 40px;
+  text-decoration: none;
+  border: solid 2px red;
+  width: 100px;
+  margin-left: 1100px;
+}
+
+      @media screen and (min-width: 620px) {
+        .nav-toggle {
+          display: none;
+        }
+
+        .links-container{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          margin: 20px;
+        }
+      }
+
+.nav-toggle {
+  margin: 20px 60px;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+.nav-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+      @media screen and (max-width: 620px) {
+        .display-none {
+          display: none !important;
+        }
+
+        .links-column {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          margin: 20px;
+        }
+      }
+
+
+
+
+
+a {
+  all: unset;
+  border: dotted black 1px;
+  background-color: rgb(237, 237, 237);
+  padding: 4px;
+  cursor: pointer;
+}
+
+.hide {
+  display: none
+}
+
+--------js-----------
+
+const date = document.getElementById("date");
+date.innerHTML = new Date().getFullYear();
+
+const menu = document.querySelector(".nav-toggle");
+
+menu.addEventListener("click", function() {
+    document.getElementById("links-c").classList.toggle("display-none");
+})

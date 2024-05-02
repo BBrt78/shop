@@ -1,0 +1,329 @@
+:root {
+  --backgroundColor: black;
+  --accentColor: brown;
+}
+
+  body {
+    background-color:rgb(168, 168, 168);
+    margin: 0;
+  }
+
+  .en {
+    color: var(--accentColor);
+    float: right;
+    padding: 5px;
+    font-weight: 500;
+    background-color: inherit;
+    font-size: inherit;
+    border: 2px solid var(--accentColor);
+    margin: 0px 15px;
+  }
+
+  .en:hover {
+    background-color: var(--accentColor);
+    color: rgb(207, 207, 207);
+    cursor: pointer;
+  }
+
+  .navbar {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    background-color: rgb(156, 156, 156);
+    z-index: 1;
+  }
+
+  .subnav {
+    overflow: hidden;
+    border: none;
+    color: rgb(191, 72, 72);
+    padding: 25px;
+    background-color: inherit;
+    z-index: 2;
+  }
+
+  .navbar:hover, .subnav:hover {
+    background-color: rgb(90, 27, 27);
+    cursor: pointer;
+  }
+  
+  .subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: inherit;
+    color: white;
+    font-weight: 500;
+    height: 75px;
+    padding: 10px 0 0 0;
+  }
+  
+  .subnav-content a:hover {
+    text-decoration: underline;
+    color:rgb(255, 146, 99);
+    cursor: pointer;
+  }
+
+  .subnavbtn:hover .subnav-content {
+    display: block;
+    width: 1122px;
+    top: 0;
+    cursor: pointer;
+  }
+
+  .hamburger:hover .subnav-content{
+    display: block;
+    width: 80%;
+    top: 10px;
+    cursor: pointer;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 2.8;
+    padding: 0px 10px;
+    top: 1px;
+  }
+
+  .subnavbtn {
+    float: right;
+    color: var(--accentColor);
+    padding: 10px 0;
+    background-color: inherit;
+    z-index: 1;
+  }
+
+  .hamburger {
+    position: absolute;
+    height: 25px;
+    float: right;
+    right: 150px;
+    top: 25px;
+    margin: 0 3px;
+    z-index: 1;
+    padding: 10px 0;
+  }
+  
+  .logo {
+    position:absolute;
+    top: 0px;
+    left: 10px;
+  }
+
+  .monet {
+    position: relative;
+    left: 90px;
+    width: 120px;
+    bottom: 15px;
+  }
+
+  .paragraph {
+    position:relative;
+    top: 150px;
+    width: 60%;
+  }
+
+  .title {
+    position: relative;
+    left: 100px;
+    bottom: 100px;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgb(111, 0, 0);
+  }
+
+  .description {
+   position: relative;
+   left: 370px;
+   bottom: 110px;
+   line-height: 200%;
+   width: 90%;
+   text-align: justify;
+  }
+
+  .moonParent {
+    height: 58px;
+    width: 23px;
+    position: fixed;
+    bottom: 45%;
+    right: 0px;
+    background-color:rgb(220, 220, 220);
+    padding: 0;
+  }
+
+  .moon {
+    position: relative;
+    height: 15px;
+    top: 2px;
+  }
+
+  .tt {
+    position: relative;
+    top: 2px;
+    height: 15px;  
+  }
+
+  .moonb {
+    border: 0;
+    border-bottom: white solid 1px;
+    height: 29px;
+    background-color: rgb(220, 220, 220);
+  }
+
+  .moonb .toolTipMoon {
+    visibility: hidden;
+    font-size: 13px;
+    width: 150px;
+    background-color: rgb(33, 33, 33);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 3px;
+    padding: 1px;
+    position: absolute;
+    right: 24px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s; 
+    border: solid 1px rgb(255, 255, 255);
+  }
+
+  .moonb:hover .toolTipMoon {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .ttb:hover .toolTipTt {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .ttb {
+    position: relative;
+    border: 0;
+    height: 29px;
+    background-color: rgb(220, 220, 220);
+  }
+
+  .ttb .toolTipTt {
+    visibility: hidden;
+    font-size: 13px;
+    width: 150px;
+    background-color: rgb(33, 33, 33);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 3px;
+    padding: 1px;
+    position: absolute;
+    right: 24px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+    border: solid 1px rgb(255, 255, 255);
+  }
+
+  .moonb:hover {
+    filter: invert(100%);
+    cursor: pointer;
+  }
+
+  .ttb:hover {
+    filter: invert(100%);
+    cursor: pointer
+  }
+
+  .ofundacji {
+    all: unset;
+    font-weight: 700;
+  }
+
+  .magazyn {
+    all: unset;
+    font-weight: 700;
+  }
+
+  .ofundacji:hover {
+  text-decoration: underline;
+  color:rgb(255, 146, 99);
+  cursor: pointer;
+  }
+
+  .magazyn:hover {
+  text-decoration: underline;
+  color:rgb(255, 146, 99);
+  cursor: pointer;
+  }
+
+      /* dark mode */
+
+body.dark {
+  background-color: var(--backgroundColor);
+  color: white;
+}
+
+body.dark .title {
+  color:rgb(128, 132, 255);
+}
+
+body.dark .navbar {
+  background-color: var(--backgroundColor);
+  border-bottom: solid 1px white;
+}
+
+body.dark .subnav:hover {
+  background-color: var(--backgroundColor);
+}
+
+body.dark .moonb {
+    background-color: var(--accentColor);
+}
+
+body.dark .moonb:hover {
+    background-color: white;
+}
+
+body.big .description {
+   line-height: normal;
+   width: 100%;  
+   font-size: 40px;
+}
+
+.one {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  border-bottom: dotted rgb(255, 217, 0) 2px;
+  padding-bottom: 1px;
+  width: 110px;
+}
+
+.one:hover {
+  border-bottom: rgb(255, 217, 0) solid 2px;
+}
+
+.descriptionEn {
+  visibility: hidden;
+}
+
+body.eng .descriptionEn {
+  visibility: visible;
+  position: relative;
+  left: 370px;
+  bottom: 980px;
+  line-height: 200%;
+  width: 90%;
+  text-align: justify;
+}
+
+body.eng .description {
+  visibility: hidden;
+}
+
+body.big .descriptionEn {
+  line-height: normal;
+  width: 100%;  
+  font-size: 40px;
+  bottom: 2827px;
+}

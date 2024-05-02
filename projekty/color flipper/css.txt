@@ -1,0 +1,96 @@
+:root {
+--light-gray: rgb(196, 196, 196);
+--background-color: #4d4d4d;
+--red: #ff3300;
+--blue: #3333ff;
+--green: #33cc33;
+}
+
+
+* {
+  all:unset
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;   
+}
+
+.nav {
+  display: flex;
+  border: solid black 1px;
+  background-color: var(--light-gray);
+  font-size: 50px;
+  justify-content: space-evenly;
+}
+
+.btn-text {
+  display: flex;
+  
+  min-height: 89vh;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.text {
+  display: flex;
+  justify-content: center; 
+}
+
+.btn {
+  display: flex;
+  border: solid black 1px;
+  justify-content: center;
+  user-select: none;
+  margin: 10px 550px;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+.btnRandom {
+  display: flex;
+  border: solid black 1px;
+  justify-content: center;
+  user-select: none;
+  margin: 10px 550px;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+.text2 {
+  border: solid 3px black;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-size: 40px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: rgb(96, 96, 96);
+}
+
+.btnRandom:hover {
+  cursor: pointer;
+  background: rgb(96, 96, 96);
+}
+
+
+a {
+  border: solid black 2px;
+  margin: 2px;
+  border-radius: 3px;
+  font-size: 25px;
+}
+
+a:hover {
+  cursor: pointer;
+  background-color: rgb(96, 96, 96);
+}

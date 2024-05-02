@@ -1,0 +1,21 @@
+lista haxa:
+
+React 
+HTTP/rest
+Git
+Redux
+Typescript
+Node
+------
+react
+redux
+rest api
+TypeScript-podstawy
+node.js
+protokol http
+git, gitlab
+
+jquery - niekoniecznie
+
+Włodek:
+Azure DevOps Lifecycle Services (LCS) tools, Postman, GitHub, Microsoft 365, and SQL Server Management Studio

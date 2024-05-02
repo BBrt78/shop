@@ -1,0 +1,55 @@
+1
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="css.css">
+<script defer src="Script.js"></script>
+</head>
+<body>
+  <div class="container">
+  <nav>
+    <div class="nav">
+        <a href="file:///C:/Users/Bartek/Desktop/js/index.html" class="href1">1 of 3</a>
+        <a href="file:///C:/Users/Bartek/Desktop/js/random%20color.html" class="href2">random</a>
+    </div>
+  </nav>
+    <div class="btn-text">
+      <div class="text">
+        <div class="text2">Background Color: <span class="color-name">#4d4d4d</span>
+        </div>
+      </div>
+      <button class="btn">Click me</button>
+    </div>
+  </div>
+</body>
+</html>
+
+2
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="css.css">
+<script defer src="Script2.js"></script>
+</head>
+<body>
+  <body>
+    <div class="container">
+    <nav>
+      <div class="nav">
+          <a href="file:///C:/Users/Bartek/Desktop/js/index.html" class="href1">1 of 3</a>
+          <a href="file:///C:/Users/Bartek/Desktop/js/random%20color.html" class="href2">random</a>
+      </div>
+    </nav>
+      <div class="btn-text">
+        <div class="text">
+          <div class="text2">Background Color: <span class="color-name">#4d4d4d</span>
+          </div>
+        </div>
+        <button class="btn">Click me</button>
+      </div>
+    </div>
+  </body>
+</body>
+</html>
